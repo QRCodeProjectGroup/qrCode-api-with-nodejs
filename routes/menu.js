@@ -36,7 +36,7 @@ router.get('/',(req,res) =>{
       $group:{
         _id:{
           _id:'$_id',
-          mekan:'$place',
+          place:'$place',
         },
         details:{
           $push:'$details'
@@ -47,7 +47,7 @@ router.get('/',(req,res) =>{
     {
       $project:{
         _id:'$_id._id',
-        mekan:'$_id.place',
+        place:'$_id.place',
         details:'$details'
       }
     }
