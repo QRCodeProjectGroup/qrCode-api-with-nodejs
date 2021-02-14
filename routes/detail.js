@@ -25,7 +25,7 @@ router.post('/',(req,res) =>{
 });
 
 router.delete('/delete/:id',(req,res) =>{
-    const promise = detailSchema.findByIdAndDelete(req.params.id)
+    const promise = detailSchema.findOneAndDelete(req.params.id)
 
     promise.then((data) =>{
         if(!data)
@@ -37,7 +37,7 @@ router.delete('/delete/:id',(req,res) =>{
 });
 
 router.put('/update/:id',(req,res) =>{
-    const promise = detailSchema.findByIdAndUpdate(
+    const promise = detailSchema.findOneAndUpdate(
         req.params.id,
         req.body,
         {

@@ -69,7 +69,7 @@ router.delete('/delete/:id',(req,res) =>{
   promise.then((data) =>{
     if(!data)
       res.json({message:'No products associated with this id found',status:false})
-    res.json({message:'The product was successfully deleted.',status:1})
+    res.json({message:'The product was successfully deleted.',code:1})
   }).catch((err) =>{
     res.json(err)
   });
@@ -77,7 +77,7 @@ router.delete('/delete/:id',(req,res) =>{
 });
 
 router.put('/update/:id',(req,res) =>{
-  const promise = MenuSchema.findByIdAndUpdate(
+  const promise = MenuSchema.findOneAndUpdate(
     req.body,
     req.params.id,
     {

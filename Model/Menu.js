@@ -6,8 +6,6 @@ const MenuSchema = new Schema({
         {
             "placeName":{
                 type:String,
-                unique:true,
-                require:true
             },
             "adress":{
                 type:String
