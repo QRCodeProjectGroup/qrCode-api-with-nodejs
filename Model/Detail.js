@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 const detilSchema = new Schema({
     "product_id": Schema.Types.ObjectId,
+    "menuName":{
+        type:String
+    },
     "detail":[
         {
             "product":{
